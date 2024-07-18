@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bad Comments Filter</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #2f3136;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        header {
+            background-color: #202225;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        #content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        #buttons {
+            margin: 20px;
+            display: flex;
+            gap: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #7289da;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:disabled {
+            background-color: #4f545c;
+            cursor: not-allowed;
+        }
+        button:hover:enabled {
+            background-color: #5b6eae;
+        }
+        #transcript {
+            width: 90%;
+            max-width: 600px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #4f545c;
+            background-color: #36393f;
+            overflow-y: auto;
+            max-height: 300px;
+            word-break: break-word;
+            color: #b9bbbe;
+            text-align: center;
+        }
+        #shapes {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+        .shape {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+        .shape1 {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 15%;
+        }
+        .shape2 {
+            width: 150px;
+            height: 150px;
+            bottom: 10%;
+            right: 15%;
+        }
+        .shape3 {
+            width: 200px;
+            height: 200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .shape4 {
+            width: 120px;
+            height: 120px;
+            bottom: 20%;
+            left: 25%;
+        }
+        .shape5 {
+            width: 180px;
+            height: 180px;
+            top: 20%;
+            right: 25%;
+        }
+        .shape6 {
+            width: 90px;
+            height: 90px;
+            top: 30%;
+            left: 70%;
+        }
+        .shape7 {
+            width: 160px;
+            height: 160px;
+            bottom: 30%;
+            right: 10%;
+        }
+        .shape8 {
+            width: 110px;
+            height: 110px;
+            top: 60%;
+            left: 10%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bad Comments Filter</h1>
+    </header>
+    <div id="content">
+        <div id="buttons">
+            <button id="startButton">Start Recording</button>
+            <button id="stopButton" disabled>Stop Recording</button>
+        </div>
+        <div id="transcript"></div>
+    </div>
+    <div id="shapes">
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+        <div class="shape shape4"></div>
+        <div class="shape shape5"></div>
+        <div class="shape shape6"></div>
+        <div class="shape shape7"></div>
+        <div class="shape shape8"></div>
+    </div>
+    <script type="module" src="static/main.js"></script>
+</body>
+</html>
